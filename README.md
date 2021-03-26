@@ -1,2 +1,2 @@
-# 6080SomethingAwesome
-COMP6080 Something Awesome Project: Keylogger
+# 6841SomethingAwesome
+Project: Keylogger
